@@ -1,9 +1,23 @@
-# A my-app Flet app
+# PYTHON-FLET-PRACTICE
 
-An example of a minimal Flet app.
+![Python Logo](https://www.python.org/static/community_logos/python-logo.png)
 
-To run the app:
+## Описание
 
-```
-flet run [app_directory]
-```
+Проект **PYTHON-FLET-PRACTICE** представляет собой практическую работу, основанную на использовании языка программирования Python в сочетании с графическим интерфейсом пользователя (UI) от FLET. Этот проект создан и поддерживается Kior Alexandr Sergeevich.
+
+## Инструменты
+
+- **Python**: Язык программирования, используемый для разработки и реализации функциональности проекта.
+- **FLET UI**: Графический интерфейс пользователя, обеспечивающий удобство взаимодействия с программой.
+
+## Основные возможности
+
+[Здесь добавьте краткое описание основных возможностей вашего проекта.]
+
+## Установка
+
+1. Клонируйте репозиторий:
+
+```bash
+git clone https://github.com/username/PYTHON-FLET-PRACTICE.git
