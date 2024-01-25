@@ -1,0 +1,37 @@
+import flet as ft
+import requests
+
+def main(page: ft.Page):
+    page.title = "Погода"
+    page.theme_mode = 'dark'
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    
+    user_data = ft.TextField(label='Введите город', width=300)
+    
+    def get_info(e):
+        if len(user_data.value)<2:
+            return
+        
+        API = '6f7b54df08f5b4def0570fc7a7750025'
+        URL = f'https://api.openweathermap.org/data/2.5/weather?q={user_data.value}&appid={API}'
+        res = requests.get(URL).json()
+        print(res)
+        
+    def change_theme(e):
+        page.theme_mode = 'light' if page.theme_mode =='dark' else 'dark'
+        page.update()
+        
+    page.add(
+        ft.Row(
+            [
+                ft.IconButton(ft.icons.SUNNY, on_click=change_theme),
+                ft.Text('Погодная программа'),
+            ],
+            alignment=ft.MainAxisAlignment.CENTER
+        ),
+        ft.Row([user_data], alignment=ft.MainAxisAlignment.CENTER),
+        ft.Row([ft.ElevatedButton(text="Получить", on_click=get_info)], alignment=ft.MainAxisAlignment.CENTER)
+    )
+    
+
+ft.app(target=main)

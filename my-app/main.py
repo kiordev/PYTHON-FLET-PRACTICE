@@ -1,60 +1,22 @@
 import flet as ft
 
-
 def main(page: ft.Page):
-    page.title = "Testing Login Form"
+    page.title = "SwordGame"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    page.bgcolor = ft.colors.DEEP_PURPLE_500
     
-    # Header
-    hello_text = ft.Text(
-        "Welcome!", 
-        size=40,
-        color=ft.colors.DEEP_PURPLE_500,
-        weight = ft.FontWeight.BOLD,
+    
+    armor_column = ft.Row(
+        [
+            ft.ElevatedButton(text="Sword"),
+            ft.ElevatedButton(text="Axe"),
+            ft.ElevatedButton(text="Arrow"),
+        ], alignment=ft.MainAxisAlignment.SPACE_AROUND, vertical_alignment=ft.CrossAxisAlignment.END
         )
     
-    # Text Fields
-    login = ft.TextField(
-        label="Login",
-        bgcolor=ft.colors.DEEP_PURPLE_300,
-        width=280,
-        border_radius=20,
-        )
+    view = ft.Container(bgcolor=ft.colors.DEEP_PURPLE_300, height=600, width=350, content=armor_column )
     
-    password = ft.TextField(
-        label="Password", 
-        password=True, 
-        bgcolor=ft.colors.DEEP_PURPLE_300,
-        width=280,
-        border_radius=20,
-        )
-    
-    # Buttons
-    entry_button = ft.ElevatedButton(
-        "Sign In",
-        bgcolor=ft.colors.DEEP_PURPLE_500,
-        color=ft.colors.DEEP_PURPLE_100
-        )
-    
-    # Main Column
-    column = ft.Column(
-        [hello_text, login, password, entry_button],
-        alignment=ft.MainAxisAlignment.CENTER,
-        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-        spacing=40,
-        )
-    
-    # Main Container
-    main = ft.Container(
-        content=column,
-        height=400,
-        width=300,
-        border_radius=25,
-        bgcolor=ft.colors.DEEP_PURPLE_100,
-    )
-    
-    page.add(main)
 
-ft.app(main)
+    page.add(ft.SafeArea(view))
+    
+ft.app(target=main)
